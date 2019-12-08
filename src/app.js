@@ -18,4 +18,6 @@ const jsx = (
 	</Provider>
 );
 
+console.log('app is runnig maybe');
+
 ReactDOM.render(jsx, document.getElementById('app'));

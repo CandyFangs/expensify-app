@@ -20,30 +20,34 @@ const isProduction = env === 'production';
     }),
     ],
     module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
-      }, {
-        test: /\.s?css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
+      rules: [
+        {
+          loader: 'babel-loader',
+          test: /\.js$/,
+          exclude: /node_modules/
+        }, 
+        {
+          test: /\.s?css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '../',
+                hmr: process.env.NODE_ENV === 'development',
+              },
             },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-            loader: "sass-loader",
-            options: {
-              sourceMap: true
-            }
-            }
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              },
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            },
           ],
         },
       ],
