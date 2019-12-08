@@ -7,7 +7,9 @@
     "build:prod": "webpack -p --env production",
     "demo": "live-server public",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "Andrew Mead",
   "license": "MIT",
